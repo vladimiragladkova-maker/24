@@ -16,7 +16,7 @@ int main() {
 	string color_green = "\x1b[32m";
 	string color_light_blue = "\x1b[36m";
 
-	cout << color_yellow;
+	cout << color_light_blue;
 
 	int answer;
 	int answer1;
@@ -39,11 +39,17 @@ int main() {
 	while (true)
 	{
 		system("cls");
-		cout << color_yellow;
+		cout << color_light_blue;
 		cout << "_________________________________НАСТРОЙКИ МАССИВА_____________________________" << endl << endl;
 
-		cout << "[ 1 ] Сортировка по возрастанию" << endl << "[ 2 ] Сортировка по убыванию" << endl << "[ 3 ] Перемножить массив" << endl << "[ 4 ] Сложить массив" << endl << "[ 5 ] Разделить массив" << endl << "[ 6 ] Обнулить массив" << endl << endl << "[ 9 ] Задать новые значения массиву" << endl;
+		cout << "[ 0 ] Выход" << endl << "[ 1 ] Сортировка по возрастанию" << endl << "[ 2 ] Сортировка по убыванию" << endl << "[ 3 ] Сложить массив" << endl << "[ 4 ] Перемножить массив" << endl << "[ 5 ] Разделить массив" << endl << "[ 6 ] Обнулить массив" << endl << endl << "[ 9 ] Задать новые значения массиву" << endl;
 		answer = _getch();
+		if (answer == '0')
+		{
+			system("cls");
+			cout << endl << endl << color_light_blue << "_______________________________" << color_white << "До свидания" << color_light_blue << "_______________________________" << color_white << endl << endl << endl << endl;
+			break;
+		}
 		if (answer == '1')
 		{
 			system("cls");
@@ -121,23 +127,6 @@ int main() {
 		if (answer == '3')
 		{
 			system("cls");
-			cout << color_f;
-			cout << endl << "________________________Перемножить массив________________________" << endl << endl << endl << endl;
-			cout << endl << endl << endl << "Исходный массив: [" << arrInt[0] << "], [" << arrInt[1] << "], [" << arrInt[2] << "], [" << arrInt[3] << "], [" << arrInt[4] << "], [" << arrInt[5] << "], [" << arrInt[6] << "]" << endl;
-			cout << endl << endl << "Введите число, на которое нужно умножить каждую ячейку массива: ";
-			cin >> answer1;
-			system("cls");
-			cout << endl << "________________Перемножить массив_________________" << endl << endl << endl << endl;
-			cout << endl << endl << endl << "Исходный массив: [" << arrInt[0] << "], [" << arrInt[1] << "], [" << arrInt[2] << "], [" << arrInt[3] << "], [" << arrInt[4] << "], [" << arrInt[5] << "], [" << arrInt[6] << "]" << endl;
-			for (int i = 0; i < SIZE; i++)
-			{
-				arrInt[i] = arrInt[i] * answer1;
-			}
-			cout << endl << endl << "Перемноженный массив: [" << arrInt[0] << "], [" << arrInt[1] << "], [" << arrInt[2] << "], [" << arrInt[3] << "], [" << arrInt[4] << "], [" << arrInt[5] << "], [" << arrInt[6] << "]";;
-		}
-		if (answer == '4')
-		{
-			system("cls");
 			cout << color_blue;
 			cout << endl << "____________________________Сложить массив____________________________" << endl << endl << endl << endl;
 			cout << endl << endl << endl << "Исходный массив: [" << arrInt[0] << "], [" << arrInt[1] << "], [" << arrInt[2] << "], [" << arrInt[3] << "], [" << arrInt[4] << "], [" << arrInt[5] << "], [" << arrInt[6] << "]" << endl;
@@ -152,10 +141,27 @@ int main() {
 			}
 			cout << endl << endl << "Сложенный массив: [" << arrInt[0] << "], [" << arrInt[1] << "], [" << arrInt[2] << "], [" << arrInt[3] << "], [" << arrInt[4] << "], [" << arrInt[5] << "], [" << arrInt[6] << "]";;
 		}
+		if (answer == '4')
+		{
+			system("cls");
+			cout << color_f;
+			cout << endl << "________________________Перемножить массив________________________" << endl << endl << endl << endl;
+			cout << endl << endl << endl << "Исходный массив: [" << arrInt[0] << "], [" << arrInt[1] << "], [" << arrInt[2] << "], [" << arrInt[3] << "], [" << arrInt[4] << "], [" << arrInt[5] << "], [" << arrInt[6] << "]" << endl;
+			cout << endl << endl << "Введите число, на которое нужно умножить каждую ячейку массива: ";
+			cin >> answer1;
+			system("cls");
+			cout << endl << "________________Перемножить массив_________________" << endl << endl << endl << endl;
+			cout << endl << endl << endl << "Исходный массив: [" << arrInt[0] << "], [" << arrInt[1] << "], [" << arrInt[2] << "], [" << arrInt[3] << "], [" << arrInt[4] << "], [" << arrInt[5] << "], [" << arrInt[6] << "]" << endl;
+			for (int i = 0; i < SIZE; i++)
+			{
+				arrInt[i] = arrInt[i] * answer1;
+			}
+			cout << endl << endl << "Перемноженный массив: [" << arrInt[0] << "], [" << arrInt[1] << "], [" << arrInt[2] << "], [" << arrInt[3] << "], [" << arrInt[4] << "], [" << arrInt[5] << "], [" << arrInt[6] << "]";;
+		}
 		if (answer == '5')
 		{
 			system("cls");
-			cout << color_light_blue;
+			cout << color_yellow;
 			cout << endl << "________________________Разделить массив__________________________" << endl << endl << endl << endl;
 			cout << endl << endl << endl << "Исходный массив: [" << arrInt[0] << "], [" << arrInt[1] << "], [" << arrInt[2] << "], [" << arrInt[3] << "], [" << arrInt[4] << "], [" << arrInt[5] << "], [" << arrInt[6] << "]" << endl;
 			cout << endl << endl << "Введите число {не равное 0}, на которое нужно разделить каждую ячейку массива: ";
@@ -184,8 +190,8 @@ int main() {
 		if (answer == '9')
 		{
 			system("cls");
-			cout << color_yellow;
-			cout << endl << "________________________Задать новые значения массиву__________________________" << endl;
+			cout << color_light_blue;
+			cout << endl << "________________________Задать новые значения массиву__________________________" << endl << endl;
 			for (int i = 0; i < SIZE; i++)
 			{
 				cout << "[ + ] Инициализация | ячейка " << i << ": ";
